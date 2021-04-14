@@ -49,8 +49,9 @@ void convertor(conversion_parameter *length_convo, int ip_index, double ip_val, 
  * @param ip_val 
  * @param op_index_1 
  * @param convo_buffer 
+ * @param length_units 
  */
-void convo_func (conversion_parameter *(length_convo_i), double ip_val, int op_index_1, double *convo_buffer);
+void convo_func (conversion_parameter* (length_convo_i), double ip_val, int op_index_1, double *convo_buffer, unit_info *length_units);
 
 /**
  * @brief 
@@ -59,6 +60,15 @@ void convo_func (conversion_parameter *(length_convo_i), double ip_val, int op_i
  * @param op_num 
  */
 void print_output_table(conversion_parameter* length_convo, int op_num);
+
+/**
+ * @brief 
+ * 
+ * @param file_name 
+ * @param ip_index 
+ * @param convo_buffer 
+ */
+void file_to_double_array (char *file_name, int ip_index, double *convo_buffer);
 
 
 #endif
