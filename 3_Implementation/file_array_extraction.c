@@ -6,7 +6,7 @@
 
 void file_to_double_array (char *file_name, int ip_index, double *convo_buffer){
 
-    FILE *fp = fopen("length_convo_factor_table.txt","r");
+    FILE *fp = fopen(file_name,"r");
 
     if (fp == NULL){
         printf("Cant open file\n");
