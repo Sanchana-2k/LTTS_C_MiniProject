@@ -119,7 +119,7 @@ void test_quantity_convertor(void){
 
 void test_conversion_factors_from_file(void){
   char test_file_name[50];
-  strcpy(test_file_name, ".\\src\\length_conversion_factor_table.csv");
+  strcpy(test_file_name, "length_conversion_factor_table.csv");
   int index_of_input = 1;
   double *conversion_factors_array = (double *) malloc(5*sizeof(double));
   TEST_ASSERT_EQUAL(0,conversion_factors_from_file (test_file_name, index_of_input, conversion_factors_array));

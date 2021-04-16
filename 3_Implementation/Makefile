@@ -23,6 +23,9 @@ unity/unity.c
 INC = -Iinc\
 -Iunity
 
+# All include folders for cppcheck
+CPPCHECK_INC = -Iinc src
+
 #To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
 ifdef OS
    MOVE = move
@@ -66,6 +69,17 @@ doc:
 
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
+	
+cppcheck:
+	cppcheck --enable=all $(CPPCHECK_INC) *.c
+	
+valgrind_main: all
+	valgrind $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+	
+valgrind_test: $(SRC) $(TEST_SRC)
+	gcc $^ $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	valgrind $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	
 
 clean:
 	$(RM) $(call FixPath,$(BUILD_DIR)/*)

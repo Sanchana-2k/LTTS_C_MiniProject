@@ -34,7 +34,7 @@ int main(){
 
         choice_of_quantity = *user_choice - '0';
 
-        int index_of_input = 0, number_of_output_conversions = 0, *array_of_output_index;
+        int index_of_input = 0, number_of_output_conversions = 0, *array_of_output_index = NULL;
         
 
         if (choice_of_quantity >= 1 && choice_of_quantity <= 5){
@@ -52,7 +52,7 @@ int main(){
                 fgets (user_input, 5, stdin);
 
                 if (*user_input < '1' || *user_input > '5') {
-                    printf("Entered value is of range, value must be between 1 and 5\n");
+                    printf("Entered value is out of range, value must be between 1 and 5\n");
                     printf("Kindly re-enter the values\n");
                     continue;
                 }
@@ -64,7 +64,7 @@ int main(){
                 fgets (user_input, 5, stdin);
 
                 if (*user_input < '1' || *user_input > '5') {
-                    printf("Entered value is of range, value must be between 1 and 5\n");
+                    printf("Number of conversions cannot be more than 5, value must be between 1 and 5\n");
                     printf("Kindly re-enter the values\n");
                     continue;
                 }
@@ -81,7 +81,7 @@ int main(){
                     fgets (user_input, 5, stdin);
 
                     if (*user_input < '1' || *user_input > '5') {
-                        printf("Entered value is of range, value must be between 1 and 5\n");
+                        printf("Entered value is out of range, value must be between 1 and 5\n");
                         printf("Kindly re-enter the values\n");
                         flag++;
                         break;
@@ -107,6 +107,11 @@ int main(){
         double input_value = 0;
         printf("Enter Input Value to be Converted: ");
         scanf("%lf",&input_value);
+        if (input_value<0){
+        	printf("\n");
+        	printf("NOTE: Since input value is negative, considering the absolute value of the input\n");
+        	input_value = -1*input_value;	
+        }
 
         conversion_parameter* array_of_conversion_parameters = ((conversion_parameter *) malloc(number_of_output_conversions*sizeof(conversion_parameter)));
 

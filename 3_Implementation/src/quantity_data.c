@@ -4,27 +4,27 @@ unit_info length_units[5] = {{"meter", "m"}, {"centimeter", "cm"},
                             {"foot", "ft. or '"}, {"inches", "\""}, {"millimeter","mm"}};
 
 
-char length_file_name[50] = ".\\src\\length_conversion_factor_table.csv";
+char length_file_name[50] = "length_conversion_factor_table.csv";
 
 unit_info area_units[5] = {{"square meters", "sq. m"}, {"square centimeter", "sq. cm"}, 
                             {"square foot", "sq. ft."}, {"square inches", "sq. in."}, {"square yard","sq. yd"}};
 
-char area_file_name[50] = ".\\src\\area_conversion_factor_table.csv";
+char area_file_name[50] = "area_conversion_factor_table.csv";
 
 unit_info volume_units[5] = {{"cubic meters", "cu. m"}, {"cubic centimeter", "cu. cm"}, 
                             {"litres", "l"}, {"milli litres", "ml"}, {"gallons (imperial)","gal"}};
 
-char volume_file_name[50] = ".\\src\\volume_conversion_factor_table.csv";
+char volume_file_name[50] = "volume_conversion_factor_table.csv";
 
 unit_info mass_units[5] = {{"Kilo grams", "kg"}, {"grams", "g"}, 
                             {"ounce", "oz"}, {"tonne", "t"}, {"pound","lbs"}};
 
-char mass_file_name[50] = ".\\src\\mass_conversion_factor_table.csv";
+char mass_file_name[50] = "mass_conversion_factor_table.csv";
 
 unit_info speed_units[5] = {{"meters per second", "m/s"}, {"kilometers per hour", "km/h"}, 
                             {"miles per hour", "mi/h"}, {"foot per second", "ft/s"}, {"knot","kn"}};
 
-char speed_file_name[50] = ".\\src\\speed_conversion_factor_table.csv";
+char speed_file_name[50] = "speed_conversion_factor_table.csv";
 
 
 
