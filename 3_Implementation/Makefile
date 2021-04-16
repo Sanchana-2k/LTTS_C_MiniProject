@@ -3,7 +3,7 @@ PROJ_NAME = metric_conversion_calc
 TEST_PROJ_NAME = Test_$(PROJ_NAME)
 
 # Output directory
-BUILD_DIR = Build
+BUILD_DIR = build
 
 # Main file name
 MAIN_NAME = metric_convertor_main.c
