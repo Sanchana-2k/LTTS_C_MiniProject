@@ -37,42 +37,43 @@ typedef struct{
 } conversion_parameter;
 
 /**
- * @brief 
+ * @brief prints length options
  * 
  * @return int 
  */
 int length_options();
 
 /**
- * @brief 
+ * @brief prints area options
  * 
  * @return int 
  */
 int area_options();
 
 /**
- * @brief 
+ * @brief prints volume options
  * 
  * @return int 
  */
 int volume_options();
 
 /**
- * @brief 
+ * @brief prints mass options
  * 
  * @return int 
  */
 int mass_options();
 
 /**
- * @brief 
+ * @brief prints speed options
  * 
  * @return int 
  */
 int speed_options();
 
 /**
- * @brief 
+ * @brief Functions calls the file extaction function to extact the array of conversion factors and 
+ * calls the conversion function to convert the input value to appropriate output 
  * 
  * @param choice 
  * @param conversion_parameter_array 
@@ -85,7 +86,7 @@ int speed_options();
 int quantity_convertor(int choice, conversion_parameter *conversion_parameter_array, int index_of_input, double input_value, int number_of_conversions, int *array_of_output_index);
 
 /**
- * @brief 
+ * @brief Extracts the array of conversion factors form the file corresponding to the input index
  * 
  * @param file_name 
  * @param index_of_input 
@@ -95,7 +96,7 @@ int quantity_convertor(int choice, conversion_parameter *conversion_parameter_ar
 int conversion_factors_from_file (char *file_name, int index_of_input, double *conversion_factor_array);
 
 /**
- * @brief 
+ * @brief Functions takes the input value and converts to the output based on the appropriate conversion factor 
  * 
  * @param ith_parameter_struct 
  * @param input_value 
@@ -107,7 +108,7 @@ int conversion_factors_from_file (char *file_name, int index_of_input, double *c
 int conversion_function (conversion_parameter* ith_parameter_struct, double input_value, int output_index, double ith_conversion_factor, unit_info *units_struct);
 
 /**
- * @brief 
+ * @brief prints output in the form of a table
  * 
  * @param array_of_parameters 
  * @param number_of_output 
