@@ -63,10 +63,50 @@ The system opens up to the standard list of metric conversions that are availabl
 
 # Detail requirements
 ## High Level Requirements:
---- TBD in Tabular Format 
--- ID | Description | Status (Implemented/Future)
+
+|      ID          |Description                          |Status                         |
+|----------------|-------------------------------|-----------------------------|
+|HR_01|Length |Implemented|
+|HR_02|Area |Implemented|
+|HR_03|Volume|Implemented|
+|HR_04|Mass |Implemented|
+|HR_05|Speed |Implemented|
+|HR_06|Time|Future|
+|HR_07|Temperature|Future|
+
 
 
 ##  Low level Requirements:
---- TBD in Tabular Format 
--- ID | Description | Status (Implemented/Future)
+|      ID          |Description                          |  HLR_ID  |Status               |
+|----------------|-------------------------------|----------|-----------------------------|
+|LR_01|Meter|HR_01|Implemented|
+|LR_02|Centimeter|HR_01|Implemented|
+|LR_03|Foot|HR_01|Implemented|
+|LR_04|Inch|HR_01|Implemented|
+|LR_05|Millimeter|HR_01|Implemented|
+|LR_06|Square Meter|HR_02|Implemented|
+|LR_07|Square Centimeter|HR_02|Implemented|
+|LR_08|Square Foot|HR_02|Implemented|
+|LR_09|MSquare Inch|HR_02|Implemented|
+|LR_10|Square Yard|HR_02|Implemented|
+|LR_11|Cubic Meter|HR_03|Implemented|
+|LR_12|Cubic Centimeter|HR_03|Implemented|
+|LR_13|Litre|HR_03|Implemented|
+|LR_14|Millilitre|HR_03|Implemented|
+|LR_15|Gallon (imperial)|HR_03|Implemented|
+|LR_16|Kilogram|HR_04|Implemented|
+|LR_17|Gram|HR_04|Implemented|
+|LR_18|Ounce|HR_04|Implemented|
+|LR_19|Tonne (metric)|HR_04|Implemented|
+|LR_20|Pound|HR_04|Implemented|
+|LR_21|Meter per Second|HR_05|Implemented|
+|LR_22|Kilometer per Hour|HR_05|Implemented|
+|LR_23|Miles per Hour|HR_05|Implemented|
+|LR_24|Foot per Second|HR_05|Implemented|
+|LR_25|Knot|HR_05|Implemented|
+|LR_26|Hour|HR_06|Future|
+|LR_27|Minute|HR_06|Future|
+|LR_28|Second|HR_06|Future|
+|LR_29|Celcius|HR_07|Future|
+|LR_30|Farenheit|HR_07|Future|
+|LR_31|Kelvin|HR_07|Future|
