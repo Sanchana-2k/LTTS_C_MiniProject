@@ -37,7 +37,7 @@ Since the system uses only open source software, it is free of cost..!!
    ![System-Diagram](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/bd3f1a159eb0f2032dbd88662892a2142d26b84d/1_Requirements/System%20Diagram.jpg)
     
 ## SWOT ANALYSIS
-![SWOT-Sample](Link to Pic)
+![SWOT-Analysis](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/6f6972167470b4b186e9995b7a6647f3f8c7cbd5/1_Requirements/swot%20analysis.jpg)
 
 # 4W&#39;s and 1&#39;H
 
