@@ -21,6 +21,7 @@ int conversion_factors_from_file (char *file_name, int index_of_input, double *c
         token = strtok(NULL,",");
         conversion_factor_array[i] = strtod(token, &eptr);
     }
+    fclose(file_pointer);
     return 0;
 
 }

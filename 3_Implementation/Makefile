@@ -1,37 +1,73 @@
-##all: test.exe
-##	test.exe
-
-##test.exe: new_main.c length_convo_with_file.c file_array_extraction.c conversion_function.c table_output.c
-##	gcc new_main.c length_convo_with_file.c file_array_extraction.c conversion_function.c table_output.c -o test.exe
-
 # Name of the project
-PROJECT_NAME = metric_conversion_calc
+PROJ_NAME = metric_conversion_calc
+TEST_PROJ_NAME = Test_$(PROJ_NAME)
 
 # Output directory
-BUILD = build
+BUILD_DIR = Build
+
+# Main file name
+MAIN_NAME = metric_convertor_main.c
 
 # All source code files
-SRC = metric_convertor_main.c\
-src\quantity_data.c\
-src\file_array_extraction.c\
-src\conversion_function.c\
-src\table_output.c
+SRC = src/quantity_data.c\
+src/file_array_extraction.c\
+src/conversion_function.c\
+src/table_output.c
+
+
+# All test source files
+TEST_SRC = test/test_metric_convertor.c\
+unity/unity.c
 
 # All include folders with header files
-INC	= -Iinc
+INC = -Iinc\
+-Iunity
 
-# Project Output name
-PROJECT_OUTPUT = $(BUILD)\$(PROJECT_NAME).exe
+#To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
+ifdef OS
+   MOVE = move
+   RM = del /q
+   FixPath = $(subst /,\,$1)
+   EXEC = exe
+else
+   ifeq ($(shell uname), Linux)
+	  MOVE = mv
+      RM = rm -rf
+      FixPath = $1
+	  EXEC = out
+   endif
+endif
 
-# Default target built
-$(PROJECT_NAME):all
+# Makefile will not run target command if the name with file already exists. To override, use .PHONY
+.PHONY : all test coverage run clean doc
 
-# Run the target even if the matching name exists
-.PHONY: run clean test doc all
+all:$(BUILD_DIR)
+	gcc $(MAIN_NAME) $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
 
-all: $(SRC) $(BUILD)
-	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT)
+run: all
+	$(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
 
-# Call `make run` to run the application
-run:$(PROJECT_NAME)
-	.\$(PROJECT_OUTPUT)
+test: $(SRC) $(TEST_SRC)
+	gcc $^ $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+
+coverage:${PROJECT_NAME}
+	gcc -fprofile-arcs -ftest-coverage $(SRC) $(TEST_SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+#gcc -fprofile-arcs -ftest-coverage $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(MOVE) *.gcno src
+	$(MOVE) *.gcda src
+	gcov -a $(SRC)
+	$(RM) $(call FixPath,src/*.gcda)
+	$(RM) $(call FixPath,src/*.gcno)
+
+doc:
+	make -C doc
+
+$(BUILD_DIR):
+	mkdir $(BUILD_DIR)
+
+clean:
+	$(RM) $(call FixPath,$(BUILD_DIR)/*)
+	make clean -C doc
+	rmdir $(BUILD_DIR) doc/html
