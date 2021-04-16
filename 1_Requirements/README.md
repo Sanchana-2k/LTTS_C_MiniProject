@@ -34,7 +34,7 @@ Since the system uses only open source software, it is free of cost..!!
 
 *TBD*
 
-### *Feature*
+### *Features*
 The various features/options for interconversion of the system are:
 1. Length
 2. Area
