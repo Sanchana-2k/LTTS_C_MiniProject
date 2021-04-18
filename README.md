@@ -2,6 +2,10 @@
 
 Unit conversions are bugbears to many..!! As conversions are a crucial aspect of math and science, this calculator lends a helping hand by providing easy and convenient conversions between units.
 
+Build | Code Quality | Unity | [Git Inspector](using github.io option)
+------|----------|-------|--------------
+[![C/C++ CI](https://github.com/Sanchana-2k/LTTS_C_MiniProject/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/b805d43e91e40f65639270e74d421be9d544b0ab/.github/workflows/c-cpp.yml) | [![Static Cppcheck](https://github.com/Sanchana-2k/LTTS_C_MiniProject/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/b805d43e91e40f65639270e74d421be9d544b0ab/.github/workflows/cppcheck.yml) [![Dynamic Valgrind](https://github.com/Sanchana-2k/LTTS_C_MiniProject/actions/workflows/dynamic-code-quality.yml/badge.svg)](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/b805d43e91e40f65639270e74d421be9d544b0ab/.github/workflows/dynamic-code-quality.yml) [![Code Coverage](https://github.com/Sanchana-2k/LTTS_C_MiniProject/actions/workflows/coverage.yml/badge.svg)](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/b805d43e91e40f65639270e74d421be9d544b0ab/.github/workflows/coverage.yml) | [![Unity - Unit Testing](https://github.com/Sanchana-2k/LTTS_C_MiniProject/actions/workflows/unity.yml/badge.svg)](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/b805d43e91e40f65639270e74d421be9d544b0ab/.github/workflows/unity.yml) | [![Git Inspector](https://github.com/Sanchana-2k/LTTS_C_MiniProject/actions/workflows/gitinspector.yml/badge.svg)](https://github.com/Sanchana-2k/LTTS_C_MiniProject/blob/b805d43e91e40f65639270e74d421be9d544b0ab/.github/workflows/gitinspector.yml)
+
 
 ## Folder Structure
 Folder             | Description
