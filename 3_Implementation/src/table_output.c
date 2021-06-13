@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "metric_convertor.h"
 
+// print the output in tabular format by taking the necessary data from conversion parameters array
 int print_output_table(conversion_parameter* array_of_parameters, int number_of_output){
 
     printf("\n");

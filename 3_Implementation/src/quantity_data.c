@@ -1,5 +1,8 @@
 #include "metric_convertor.h"
 
+// storing unit information of each of the quantity - in struct unit_info
+// file name of each of the option is stored in string
+
 unit_info length_units[5] = {{"meter", "m"}, {"centimeter", "cm"}, 
                             {"foot", "ft. or '"}, {"inches", "\""}, {"millimeter","mm"}};
 
@@ -26,7 +29,7 @@ unit_info speed_units[5] = {{"meters per second", "m/s"}, {"kilometers per hour"
 
 char speed_file_name[50] = "speed_conversion_factor_table.csv";
 
-
+// function for each quantity -> to print option for each quantity 
 
 int length_options(){
     printf("\n");
@@ -88,13 +91,16 @@ int speed_options(){
     return 0;
 }
 
-
+// function to select file name and unit_info array based choice of quantity and
+// call function to import array from csv file based input type (index of input)
+// call function to convert the value and store result in conversion parameter array
 
 int quantity_convertor(int choice, conversion_parameter *conversion_parameter_array, int index_of_input, double input_value, int number_of_conversions, int *array_of_output_index){
     
     char *conversion_factor_file;
     unit_info *quantity_units_data;
     
+    // select file name and unit_info array based choice of quantity
     if (choice == 1){
         conversion_factor_file= length_file_name;
         quantity_units_data = length_units;     
@@ -116,13 +122,18 @@ int quantity_convertor(int choice, conversion_parameter *conversion_parameter_ar
         quantity_units_data = speed_units;     
     }
 
+    // array to store conversion factor based on input type (index_of_input)
     double *conversion_factors_array = (double *) malloc(5*sizeof(double));
 
+    // call function to import array from csv file based input type (index_of_input)
     conversion_factors_from_file (conversion_factor_file, index_of_input, conversion_factors_array);
 
+    // iterate number_of_conversions times and call conversion_function each time to convert based on conversion factor
     for (int i=0; i<number_of_conversions; i++){
+        // call function to convert the value and store result in conversion parameter array
         conversion_function ((conversion_parameter_array+i), input_value, array_of_output_index[i]-1, conversion_factors_array[array_of_output_index[i]-1], quantity_units_data);
     }
+    // free the memory allocated dynamically
     free(conversion_factors_array);
 
     return 0;

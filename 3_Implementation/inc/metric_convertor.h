@@ -1,7 +1,7 @@
 /**
  * @file metric_convertor.h
  * @author S Sanchana
- * @brief Contains all the declarations required for metric conversion
+ * @brief Metric conversion calculator declarations
  * @version 0.1
  * @date 2021-04-13
  * 
@@ -18,22 +18,24 @@
 #include <stdlib.h>
 
 /**
+ * @struct unit_info
  * @brief Structure definition for unit name and its symbol
  * 
  */
 typedef struct{
-    char name[20];
-    char symbol[10];
+    char name[20];    /**< name of the unit */
+    char symbol[10];  /**< symbol of the unit */
 } unit_info;
 
 /**
+ * @struct conversion_parameter
  * @brief Structure Definition for values required for conversion
  * 
  */
 typedef struct{
-    unit_info *unit;
-    double conversion_factor;
-    double calculated_output; 
+    unit_info *unit;  /**< store the unit info of the output type */
+    double conversion_factor; /**< store the connvertion factor from input type to output type */
+    double calculated_output; /**< calculate the converted value and store the result */
 } conversion_parameter;
 
 /**
