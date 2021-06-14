@@ -1,4 +1,4 @@
-name: Contribution Check - Git Inspector
+name: Git Inspector
 
 on:
   push:

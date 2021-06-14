@@ -1,4 +1,4 @@
-name: C Linux Build
+name: Windows unit testing
 
 on:
   push:
@@ -9,9 +9,9 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: make
-      run: make -C 3_Implementation/ all
+      run: make -C 3_Implementation/ test
