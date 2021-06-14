@@ -28,15 +28,15 @@ int main(){
 
         // ERROR HANDLING - To avoid infinite loop if accidentally char is entered instead of int for choice_of_quantity
         
-        char user_choice[5]; // Define temporary variable to get choice as string
+        char user_choice[25]; // Define temporary variable to get choice as string
 
         fseek(stdin,0,SEEK_END); // flush the stdin so that it does not consider \n from previous input
 
-        fgets (user_choice, 5, stdin); // get the choice value from user as string
+        fgets (user_choice, 25, stdin); // get the choice value from user as string
 
         // check if the choice is within the range
         // else: ask to re-enter and go to start of loop
-        if (*user_choice < '1' || *user_choice > '6') {
+        if (*user_choice < '1' || *user_choice > '6' || *(user_choice+1)!='\n') {
             printf("Entered value is out of range, value must be between 1 and 6\n");
             printf("Kindly re-enter the values\n");
             continue;
@@ -56,7 +56,7 @@ int main(){
                
                // ERROR HANDLING - To avoid infinite loop if accidentally char is entered instead of int for quantity_options
                
-               char user_input[5]; // Define temporary variable to get choice as string
+               char user_input[25]; // Define temporary variable to get choice as string
 
                 quantity_options[choice_of_quantity-1](); // print the respective quantity option based on choice using function pointer array
 
@@ -64,11 +64,11 @@ int main(){
 
                 fseek(stdin,0,SEEK_END); // flush the stdin so that it does not consider \n from previous input
 
-                fgets (user_input, 5, stdin); // get the input index value from user as string
+                fgets (user_input, 25, stdin); // get the input index value from user as string
 
                 // check if the input index is within the range
                 // else: ask to re-enter and go to start of loop
-                if (*user_input < '1' || *user_input > '5') {
+                if (*user_input < '1' || *user_input > '5' || *(user_input+1)!='\n') {
                     printf("Entered value is out of range, value must be between 1 and 5\n");
                     printf("Kindly re-enter the values\n");
                     continue;
@@ -79,11 +79,11 @@ int main(){
 
                 printf("Enter the number of options to which you would like to convert: ");
 
-                fgets (user_input, 5, stdin); // get the number of options value from user as string
+                fgets (user_input, 25, stdin); // get the number of options value from user as string
 
                 // check if the number of conversions is <= number of options
                 // else: ask to re-enter and go to start of loop
-                if (*user_input < '1' || *user_input > '5') {
+                if (*user_input < '1' || *user_input > '5' || *(user_input+1)!='\n') {
                     printf("Number of conversions cannot be more than 5, value must be between 1 and 5\n");
                     printf("Kindly re-enter the values\n");
                     continue;
@@ -101,11 +101,11 @@ int main(){
                 // loop to get each of the index of the output to be stored in the array
                 for (int i=0; i<number_of_output_conversions; i++){
                     printf("Enter the index of output type: ");
-                    fgets (user_input, 5, stdin); // get the output index value from user as string
+                    fgets (user_input, 25, stdin); // get the output index value from user as string
 
                     // check if the output indices are within the range
                     // else: raise the flag and break the for loop
-                    if (*user_input < '1' || *user_input > '5') {
+                    if (*user_input < '1' || *user_input > '5' || *(user_input+1)!='\n') {
                         printf("Entered value is out of range, value must be between 1 and 5\n");
                         printf("Kindly re-enter the values\n");
                         flag++;
@@ -136,14 +136,31 @@ int main(){
 
         // initialize and get the value to be converted as double
         double input_value = 0;
-        printf("Enter Input Value to be Converted: ");
-        scanf("%lf",&input_value);
+        while (1){
+            input_value = 0;
+            printf("Enter Input Value to be Converted: ");
 
-        // if input value to be converted is negative then take absolute of the value
-        if (input_value<0){
-        	printf("\n");
-        	printf("NOTE: Since input value is negative, considering the absolute value of the input\n");
-        	input_value = -1*input_value;	
+            // initialize a dummy string to get input value as string
+            char input_val_str[100] = "";
+            fgets(input_val_str, 100, stdin);
+
+            // try to convert the string to double
+            if (sscanf(input_val_str, "%lf", &input_value) == 1){
+                // if possible, then check if input is positive
+                if (input_value>=0){
+                    break;
+                }
+                else{
+                    // if input is negative ask to re-enter
+                    printf("metric value cannot be negative, kindly re-enter a valid value\n");
+                    printf("\n");
+                }
+            }
+            else{
+                // if input cannot be converted to string (say input is char), then ask to re-enter
+                printf("input is not an floating point value, kindly re-enter a valid value\n");
+                printf("\n");
+            }
         }
 
         // initialize an array to store the result in conversion parameter array

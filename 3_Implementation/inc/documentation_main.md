@@ -1,2 +1,2 @@
-@mainpage Calculator Application by Bharath G
-@subpage calculator_operations.h
+@mainpage Metric Convertor Calculator - S Sanchana
+@subpage Unit conversions just a click away..!!!
