@@ -27,6 +27,20 @@ SF No. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Case
 1. Inputing char for int in while(1) loop lead to infinite loop -> got value as fgets
 2. Including files -> later resolved
 
+## Project Enhancements carried out
+Variable | Bug | Fix
+--- | --- | ----
+input_value | char input was considered 0 | Indicated invalid and user asked to re-enter
+input_value | Negative inputs were accepted by considering their absolute values | indicating metric cannot be negative, user asked to re-enter
+choice_of_quantity, index_of_input, number_of_output_conversions, array_of_output_index[i] | fseek to flush stdin, so next variable does not take values from previous input was not working in linux | buffer size increased to fit accidental extra values
+choice_of_quantity, index_of_input, number_of_output_conversions, array_of_output_index[i] | only 1st digit was considered for index, thus, accidental 123 input is considered index 1 | fixed by prompting user to re-enter input within the range
+
+### Miscellaneous
+* Inclusion of appropriate comments
+* YML for windows created
+* doxyfile generated
+* codacy badge included
+
 ## Learning Resources
 1. [markdownCheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 2. [markdownBasics](https://guides.github.com/features/mastering-markdown/)
