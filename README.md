@@ -30,10 +30,10 @@ SF No. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Case
 ## Project Enhancements carried out
 Variable | Bug | Fix
 --- | --- | ----
-input_value | char input was considered 0 | Indicated invalid and user asked to re-enter
-input_value | Negative inputs were accepted by considering their absolute values | indicating metric cannot be negative, user asked to re-enter
-choice_of_quantity, index_of_input, number_of_output_conversions, array_of_output_index[i] | fseek to flush stdin, so next variable does not take values from previous input was not working in linux | buffer size increased to fit accidental extra values
-choice_of_quantity, index_of_input, number_of_output_conversions, array_of_output_index[i] | only 1st digit was considered for index, thus, accidental 123 input is considered index 1 | fixed by prompting user to re-enter input within the range
+input_value | Character inputs was considered 0 | Indicated as invalid and user asked to re-enter
+input_value | Negative inputs were accepted by considering their absolute values | Indicating metric cannot be negative, user asked to re-enter
+choice_of_quantity, index_of_input, number_of_output_conversions, array_of_output_index[i] | fseek to flush stdin, so next variable does not take values from previous input was not working in linux | Buffer size increased to fit accidental extra values
+choice_of_quantity, index_of_input, number_of_output_conversions, array_of_output_index[i] | only 1st digit was considered for index, thus, accidental 123 input is considered index 1 | Fixed by prompting user to re-enter input within the range
 
 ### Miscellaneous
 * Inclusion of appropriate comments
