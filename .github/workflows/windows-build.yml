@@ -1,4 +1,4 @@
-name: Windows C/C++ CI - Build & Test Status
+name: C windows Build
 
 on:
   push:
