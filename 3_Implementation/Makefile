@@ -65,7 +65,7 @@ coverage:${PROJECT_NAME} $(BUILD_DIR)
 	$(RM) $(call FixPath,src/*.gcno)
 
 doc:
-	make -C doc
+	make -C documentation
 
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
